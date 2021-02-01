@@ -15,23 +15,23 @@ Beispiel: Ihr programmiert einen Zahlungsdienst und wollt, dass dieser Dienst je
 
 ### Codebeschreibung:
 
-In dem hochgeladnenen Code befindet sich unsere Erdensimulation, in welcher wir Gott spielen. Ich habe seit dem letzten Mal das Projekt aufgeräumt und ein paar Sachen ergänzt. Es gibt nun die abstrakten Klassen Animal, DomesticAnimal und Plant. Jeweils mit 1-2 Unterklassen.
+In dem hochgeladnenen Code befindet sich unsere Erdensimulation, in welcher wir Gott spielen. Ich habe seit dem letzten Mal das Projekt aufgeräumt und ein paar Sachen ergänzt. Es gibt nun die abstrakten Klassen *Animal, DomesticAnimal* und *Plant*. Jeweils mit 1-2 Unterklassen.
 Ein Interface namens *IEdible* wurde auch erstellt.
-In der Klasse Human gibt es nun auch eine Methode *eat(IEdible edible)*. Diese Methode nimmt als Parameter ein Interface an. Denn jetzt kommt die Krux
+In der Klasse *Human*gibt es nun auch eine Methode *eat(IEdible edible)*. Diese Methode nimmt als Parameter ein Interface an. Denn jetzt kommt die Krux
 
 Ein Mensch kann diverse Sachen. Diese Sachen können Tiere oder Pflanzen sein, aber nicht alle Tiere oder Pflanzen können/sollten gegessen werden.
 Der erste Gedanke wäre eine abstrakte Klasse *Food* zu erstellen, die alle Sachen beinhaltet, die essbar sind. Allerdings können wir das nicht tun, denn ein Apfel erbt bereits von der Klasse *Plant*. In Java kann man nur von einer Klasse erben. In der Klasse Plant kann man auch nicht abstrahieren, denn nicht jede Pflanze ist essbar.
 
-Wir können stattdessen ein Interface implementieren. Das Interface IEdible. IEdible schreibt nur eine Methode vor --> getEaten(). Diese Methode müssen alle Klassen implementieren, die das Interface einbauen. 
+Wir können stattdessen ein Interface implementieren. Das Interface *IEdible*. *IEdible* schreibt nur eine Methode vor --> *getEaten()*. Diese Methode müssen alle Klassen implementieren, die das Interface einbauen. 
 Das tolle an der Lösung:
 Wir haben jetzt ein Konstrukt erschaffen, in welchem jede Klasse als essbar eingestuft werden kann.
 Wir haben die Möglichkeit nach der Implementierung des Interfaces zu fragen (und sparen uns somit große und komplexe If-Abfragen).
-Wir wissen, dass jede Klasse, welche das Interface implementiert, die Methode getEaten() besitzt
+Wir wissen, dass jede Klasse, welche das Interface implementiert, die Methode *getEaten()* besitzt
 
-Das nutzen wir bei der Methode *eat(IEdible edible)*. Ein Objekt kann __nur__ übergeben werden, wenn es auch eine Implementierung des Interfaces IEdible besitzt. Damit geht wie eben schon angesprochen, dass wir auf die Methode getEaten() des übergegebenen Objektes zugreifen können. Somit ist alles sauber und verständlich programmiert und verknüpft. Das Projekt kann jetzt sogar einfach um ganz viele neue essbare Sachen erweitert werden, indem Klassen einfach dieses eine kleine Interface implementieren. Es muss dann nirgends eine neue Abfrage oder ähnliches gemacht werden.
+Das nutzen wir bei der Methode *eat(IEdible edible)*. Ein Objekt kann __nur__ übergeben werden, wenn es auch eine Implementierung des Interfaces *IEdible* besitzt. Damit geht wie eben schon angesprochen, dass wir auf die Methode *getEaten()* des übergegebenen Objektes zugreifen können. Somit ist alles sauber und verständlich programmiert und verknüpft. Das Projekt kann jetzt sogar einfach um ganz viele neue essbare Sachen erweitert werden, indem Klassen einfach dieses eine kleine Interface implementieren. Es muss dann nirgends eine neue Abfrage oder ähnliches gemacht werden.
 
 ### 📝 Aufgabe:
-Schaut euch den Code an. Besonders wichtig sind hierbei die Klassen Apple und Human (besonders die Methode eat) und natürlich das Interface IEdible. Schaut euch an, wie das Interface da eingesetzt wird, wie die Methode implementiert wird. Ihr sollt nämlich die Klasse *Cow* vervollständigen. Bedeutet ihr sollt sowohl die Vererbung der Elternklassen *DomesticAnimal*, *Animal* als auch das Interface IEdible implementieren.
+Schaut euch den Code an. Besonders wichtig sind hierbei die Klassen *Apple* und *Human* (besonders die Methode *eat*) und natürlich das Interface *IEdible*. Schaut euch an, wie das Interface da eingesetzt wird, wie die Methode implementiert wird. Ihr sollt nämlich die Klasse *Cow* vervollständigen. Bedeutet ihr sollt sowohl die Vererbung der Elternklassen *DomesticAnimal*, *Animal* als auch das Interface *IEdible* implementieren.
 
 Wenn ihr Lust habt könnt ihr euch auch an neuen essbaren Klassen wagen, wie zum Beispiel einem Pilz, oder andere Tiere. Oder ihr macht die Klasse Human selbst essbar. Kannibalismus is a thing. 
 Oder wenn ihr wirklich Lust habt: Überlegt euch ein neues Interfaces und implementiert dieses in ein paar Klassen.
